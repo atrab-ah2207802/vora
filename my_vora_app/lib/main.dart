@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'providers/climate_provider.dart';
+import 'screens/home_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider(
+      create: (_) => ClimateProvider(),
+      child: MaterialApp(
+        title: 'Room Climate Control',
+
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.teal,
+          ),
+        ),
+
+        debugShowCheckedModeBanner: false,
+        home: const HomeScreen(),
+      ),
+    );
+  }
+}
