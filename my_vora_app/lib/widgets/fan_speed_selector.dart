@@ -56,11 +56,11 @@ class _FanSpeedSelectorState extends State<FanSpeedSelector> {
       child: IgnorePointer(
         ignoring: !widget.isPowered,
         child: SizedBox(
-          height: 66,
+          height: 80,
           width: 100,
           child: ListWheelScrollView.useDelegate(
             controller: _controller,
-            itemExtent: 22,
+            itemExtent: 28,
             perspective: 0.003,
             diameterRatio: 1.4,
             physics: const FixedExtentScrollPhysics(),
